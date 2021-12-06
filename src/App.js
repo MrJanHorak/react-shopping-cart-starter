@@ -22,6 +22,16 @@ export default function App() {
     ]);
     console.log(cart);
   };
+  const removeFromCart = (index) => {
+    
+    const filteredCart = cart.filter((_, idx) => idx !== index)
+    console.log('filtered',filteredCart)
+    setCart([
+      ...filteredCart,
+    ]);
+
+    console.log(cart)
+  };
 
   // create an removeFromCart function that takes in an index as a param
   // using Array.filter remove create a new array where that item is removed
@@ -32,7 +42,7 @@ export default function App() {
       <Form />
       <div className="products">
         <AllTheThings productsArr={productsArr} addToCart={addToCart} />
-        <MyShoppingCart cart = {cart}/>
+        <MyShoppingCart cart = {cart} removeFromCart= {removeFromCart}/>
       </div>
     </div>
   );

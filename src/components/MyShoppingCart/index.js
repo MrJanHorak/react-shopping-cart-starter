@@ -6,7 +6,7 @@ function MyShoppingCart(props) {
 
   const things = props.cart.map((element, index) => {
     return (
-      <li >
+      <li onClick = {() => props.removeFromCart(index)}>
         {element.name} - $ {element.price}
       </li>
     );
